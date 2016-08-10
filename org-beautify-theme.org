@@ -4,7 +4,7 @@
   ;; Copyright (C) 2014 Jonathan Arkell
   
   ;; Author: Jonathan Arkell <jonnay@jonnay.net>
-  ;; package-Version: 0.1.2
+  ;; package-Version: 0.2
   ;; Created: 5 Oct 2012
   ;; Keywords: org theme
   
@@ -35,7 +35,6 @@
 * This theme is dedicated to my wife Shell
   Who--in her beauty, her love, and her love for beauty--has shown me
   that form can enhance function.
-
 * Mission
   - Make org mode headlines easy to read.  In any theme.
   - Make it look more like a published book and/or desktop app, less like angry fruit salad.
@@ -48,9 +47,11 @@
      - Fix checkboxes
    - v0.1.2 :: [2014-01-06]
      - Add Verdana font to fall back on
+   - v0.2 [2016-08-08]
+     - Better repository Location
+     - Fix so that you can load the theme properly.
 
 * Road map
-
    - Future
      - Figure out a better sub-theme infrastructure, so new themes don't break. 
      - Work on niceifying todo keywords
@@ -118,7 +119,7 @@ For now the beautification is:
                           nil)))))
 #+end_src
 
-* NEXT 
+* NEXT <-- test a todo keyword On a headline  
 * Display Testing 
 ** 2nd level
 *** third
@@ -127,12 +128,13 @@ For now the beautification is:
 ****** sixth
 ******* seventh
 ******** eighth
+********* NINTH (this shows brokenness) 
 		 - list item
 		 - [X] Checkbox
 		 - [ ] Empty checkbox
 *** TODO foo
 *** DONE foo test  
-*** TODO The end of civilizaiton 
+*** TODO The end of civilization 
 	 SCHEDULED: <2031-01-19 Sun 03:14>
 *** DONE Y2k
 	 CLOSED: [2000-01-01 00:00]
@@ -144,7 +146,9 @@ For now the beautification is:
 | row   |
 | row   |
 
-
+#+begin_example
+this is an example
+#+end_example
 
 
 * TODO Calendar
@@ -166,30 +170,33 @@ For now the beautification is:
   keywords to customize the look of the main area. I am not entirely
   sure how to change that, without changing it for all buffers.
 
-  - Weened :: font-lock-comment-face
+  - Weenend :: font-lock-comment-face
   - Weekday :: font-lock-constant-face
   - Month/year :: font-lock-function-face
 
+* Developing
 
-* Testing And Deployment
-  Better testing needs to happen here:
-  - Tangle
-  - Disable theme if running
-  - re-enable
+~describe-text-properties~ is your friend
+
+* Testing
+
+  Run this chunk of lisp to test the theme:
+
 #+begin_src emacs-lisp :tangle no
   (progn 
     (when (file-exists-p "org-beautify-theme.el")
       (delete-file "org-beautify-theme.el"))
-    (org-babel-tangle)
-    (unless (member default-directory 'custom-theme-load-path)
+    (org-babel-tangle-file "org-beautify-theme.org")
+    (unless (member default-directory custom-theme-load-path)
       (add-to-list 'custom-theme-load-path default-directory))
+    (when (member 'org-beautify 'custom-enabled-themes)
+      (disable-theme 'org-beautify))
     (load-theme 'org-beautify))
 #+end_src
 
-* Fin 👯
+* Fin 🐰
 #+begin_src emacs-lisp :tangle yes
-(provide-theme 'org-beautify-theme)
-
+(provide-theme 'org-beautify)
 ;;; org-beautify-theme.el ends here
 #+end_src
 
