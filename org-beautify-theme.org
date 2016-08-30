@@ -4,7 +4,7 @@
   ;; Copyright (C) 2014-2016 Jonathan Arkell
 
   ;; Author: Jonathan Arkell <jonnay@jonnay.net>
-  ;; package-Version: 0.2
+  ;; Version: 0.2
   ;; Created: 5 Oct 2012
   ;; Keywords: org theme
 
