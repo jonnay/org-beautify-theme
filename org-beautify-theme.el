@@ -1,5 +1,5 @@
 ;;; org-beautify-theme.el --- A sub-theme to make org-mode more beautiful.
-;; Copyright (C) 2014 Jonathan Arkell
+;; Copyright (C) 2014-2016 Jonathan Arkell
 
 ;; Author: Jonathan Arkell <jonnay@jonnay.net>
 ;; package-Version: 0.2
@@ -10,30 +10,43 @@
 ;; Released under the GPL v3.0
 
 ;;; Commentary:
-;; An attempt to improve the typography of an org-mode file.
+;; * Making Org-mode Beautiful
+;; ** This theme is dedicated to my wife Shell
+;;   Who—in her beauty, her love, and her love for beauty—has shown me
+;;   that form can enhance function.
+;; * Mission
+;;   - Make org mode headlines easy to read.  In any theme.
+;;   - Make it look more like a published book and/or desktop app, less
+;;     like angry fruit salad.
+;;   - Make it awesome to live in an org buffer.
+;; * Usage
+;;   Load this theme over top your existing theme, and you should be
+;;   golden.  If you find any incompatibilities, let me know with what
+;;   theme and I will try and fix it.
+;; 
+;;   When loading a whole new theme overtop, org-beautify-theme will
+;;   still be active with the old theme.  Just unload org-beautify-theme
+;;   and then reload it, and everything will be fine again.
+;; 
+;; * Changelog
+;;    - v0.1 :: First Release
+;;          - Make the colors suck a lot less, and the buffers look a lot nicer.
+;;    - v0.1.1 :: [2014-01-06]
+;;      - Fix checkboxes
+;;    - v0.1.2 :: [2014-01-06]
+;;      - Add Verdana font to fall back on
+;;    - v0.2 [2016-08-08]
+;;      - Better repository Location
+;;      - Fix so that you can load the theme properly.
 
-;; Load this theme over top your existing theme, and you should
-;; be golden.  If you find any incompatibilities, let me know
-;; with what theme and I will try and fix it.
-
-;; This is part of the Emagicians Starter kit--but available
-;; separately.
-
-;; When loading a whole new theme overtop, org-beautify-theme will 
-;; still be active with the old theme.  Just unload org-beautify-theme
-;; and then reload it, and everything will be fine again. 
-
-;; The Source for this file is here:
-;; https://github.com/jonnay/emagicians-starter-kit/blob/master/themes/org-beautify-theme.org
-
-;;; Code: 
+;;; Code:
 
 (deftheme org-beautify "Sub-theme to beautify org mode")
 
 (let* ((sans-font (cond ((x-list-fonts "Lucida Grande") '(:font "Lucida Grande"))
                         ((x-list-fonts "Verdana") '(:font "Verdana"))
                         ((x-family-fonts "Sans Serif") '(:family "Sans Serif"))
-                        (nil (warn "Cannot find a Sans Serif Font.  Please report at: https://github.com/jonnay/emagicians-starter-kit/issues"))))
+                        (nil (warn "Cannot find a Sans Serif Font.  Please report at: https://github.com/jonnay/org-beautify-theme/issues"))))
        (base-font-color (face-foreground 'default  nil 'default))
        (background-color (face-background 'default nil 'default))
        (headline `(:inherit default :foreground ,base-font-color))
@@ -55,7 +68,7 @@
 
                           `(org-block ((t (:foreground ,base-font-color :background ,background-color :box nil))))
                           `(org-block-begin-line ((t ,org-highlights)))
-                          `(org-block-end-line ((t ,org-highlights))) 
+                          `(org-block-end-line ((t ,org-highlights)))
 
                           `(org-checkbox ((t (:foreground "#000000", :background "#93a1a1" :box (:line-width -3 :color "#93a1a1" :style "released-button")))))
 

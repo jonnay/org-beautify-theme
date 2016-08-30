@@ -1,46 +1,45 @@
 #+title: Org-Beautify-Theme
-#+begin_src emacs-lisp :tangle yes :padline no 
+#+begin_src emacs-lisp :tangle yes :padline no :noweb yes
   ;;; org-beautify-theme.el --- A sub-theme to make org-mode more beautiful.
-  ;; Copyright (C) 2014 Jonathan Arkell
-  
+  ;; Copyright (C) 2014-2016 Jonathan Arkell
+
   ;; Author: Jonathan Arkell <jonnay@jonnay.net>
   ;; package-Version: 0.2
   ;; Created: 5 Oct 2012
   ;; Keywords: org theme
-  
+
   ;; This file is not part of GNU Emacs.
   ;; Released under the GPL v3.0
-  
+
   ;;; Commentary:
-  ;; An attempt to improve the typography of an org-mode file.
+  ;; <<commentary>>
 
-  ;; Load this theme over top your existing theme, and you should
-  ;; be golden.  If you find any incompatibilities, let me know
-  ;; with what theme and I will try and fix it.
-
-  ;; This is part of the Emagicians Starter kit--but available
-  ;; separately.
-
-  ;; When loading a whole new theme overtop, org-beautify-theme will 
-  ;; still be active with the old theme.  Just unload org-beautify-theme
-  ;; and then reload it, and everything will be fine again. 
-
-  ;; The Source for this file is here:
-  ;; https://github.com/jonnay/emagicians-starter-kit/blob/master/themes/org-beautify-theme.org
-
-  ;;; Code: 
+  ;;; Code:
 
   (deftheme org-beautify "Sub-theme to beautify org mode")
 #+end_src
-* This theme is dedicated to my wife Shell
-  Who--in her beauty, her love, and her love for beauty--has shown me
-  that form can enhance function.
-* Mission
-  - Make org mode headlines easy to read.  In any theme.
-  - Make it look more like a published book and/or desktop app, less like angry fruit salad.
-  - Make it awesome to live in an org buffer.
 
-* Changelog 
+#+name: commentary
+#+begin_src org-mode :tangle README.org
+,* Making Org-mode Beautiful
+,** This theme is dedicated to my wife Shell
+  Who—in her beauty, her love, and her love for beauty—has shown me
+  that form can enhance function.
+,* Mission
+  - Make org mode headlines easy to read.  In any theme.
+  - Make it look more like a published book and/or desktop app, less
+    like angry fruit salad.
+  - Make it awesome to live in an org buffer.
+,* Usage
+  Load this theme over top your existing theme, and you should be
+  golden.  If you find any incompatibilities, let me know with what
+  theme and I will try and fix it.
+
+  When loading a whole new theme overtop, org-beautify-theme will
+  still be active with the old theme.  Just unload org-beautify-theme
+  and then reload it, and everything will be fine again.
+
+,* Changelog
    - v0.1 :: First Release
 	 - Make the colors suck a lot less, and the buffers look a lot nicer.
    - v0.1.1 :: [2014-01-06]
@@ -50,10 +49,11 @@
    - v0.2 [2016-08-08]
      - Better repository Location
      - Fix so that you can load the theme properly.
+#+end_src
 
 * Road map
    - Future
-     - Figure out a better sub-theme infrastructure, so new themes don't break. 
+     - Figure out a better sub-theme infrastructure, so new themes don't break.
      - Work on niceifying todo keywords
 	 - Better color customizations
 	 - Look into alternate font settings
@@ -62,7 +62,7 @@
      - Controllable Properties Need to look into this: [[info:elisp#Specified%20Space][info:elisp#Specified Space]]
 
 * Beautification
-I Like Lucia Grande, so we'll start with that for a sans-serif font, but also allow for fall-backs. 
+I Like Lucia Grande, so we'll start with that for a sans-serif font, but also allow for fall-backs.
 
 For now the beautification is:
 - Reset all headlines to the base background/foreground color
@@ -70,7 +70,7 @@ For now the beautification is:
 - Make headline level 2 and 1 bigger and sans-serif.
 - Delineate the blocks nicely, and reset their foreground and background
 - Set the foreground and background color of the checkboxes and make them very checkboxy
-- strike through done keywords. 
+- strike through done keywords.
 - Nicer Todo/Done states
 
 * The Code
@@ -79,7 +79,7 @@ For now the beautification is:
   (let* ((sans-font (cond ((x-list-fonts "Lucida Grande") '(:font "Lucida Grande"))
                           ((x-list-fonts "Verdana") '(:font "Verdana"))
                           ((x-family-fonts "Sans Serif") '(:family "Sans Serif"))
-                          (nil (warn "Cannot find a Sans Serif Font.  Please report at: https://github.com/jonnay/emagicians-starter-kit/issues"))))
+                          (nil (warn "Cannot find a Sans Serif Font.  Please report at: https://github.com/jonnay/org-beautify-theme/issues"))))
          (base-font-color (face-foreground 'default  nil 'default))
          (background-color (face-background 'default nil 'default))
          (headline `(:inherit default :foreground ,base-font-color))
@@ -101,7 +101,7 @@ For now the beautification is:
 
                             `(org-block ((t (:foreground ,base-font-color :background ,background-color :box nil))))
                             `(org-block-begin-line ((t ,org-highlights)))
-                            `(org-block-end-line ((t ,org-highlights))) 
+                            `(org-block-end-line ((t ,org-highlights)))
 
                             `(org-checkbox ((t (:foreground "#000000", :background "#93a1a1" :box (:line-width -3 :color "#93a1a1" :style "released-button")))))
 
@@ -113,14 +113,14 @@ For now the beautification is:
 #+begin_src emacs-lisp :tangle no
 
   (font-lock-add-keywords
-   'org-mode '(("^\*+ \\(NEXT\\)" 
+   'org-mode '(("^\*+ \\(NEXT\\)"
                 (0 (progn (compose-region (match-beginning 1) (match-end 1)
                                           "❇\t N\tE\tX\tT\t"
                           nil)))))
 #+end_src
 
-* NEXT <-- test a todo keyword On a headline  
-* Display Testing 
+* NEXT <-- test a todo keyword On a headline
+* Display Testing
 ** 2nd level
 *** third
 **** fourth
@@ -128,13 +128,13 @@ For now the beautification is:
 ****** sixth
 ******* seventh
 ******** eighth
-********* NINTH (this shows brokenness) 
+********* NINTH (this shows brokenness)
 		 - list item
 		 - [X] Checkbox
 		 - [ ] Empty checkbox
 *** TODO foo
-*** DONE foo test  
-*** TODO The end of civilization 
+*** DONE foo test
+*** TODO The end of civilization
 	 SCHEDULED: <2031-01-19 Sun 03:14>
 *** DONE Y2k
 	 CLOSED: [2000-01-01 00:00]
@@ -161,7 +161,7 @@ this is an example
   The following Faces are available:
   - Calendar Today Face
   - Diary Anniversary
-  - Diary Button 
+  - Diary Button
   - Diary
   - Diary Time
   - Holiday
@@ -183,7 +183,7 @@ this is an example
   Run this chunk of lisp to test the theme:
 
 #+begin_src emacs-lisp :tangle no
-  (progn 
+  (progn
     (when (file-exists-p "org-beautify-theme.el")
       (delete-file "org-beautify-theme.el"))
     (org-babel-tangle-file "org-beautify-theme.org")
@@ -199,4 +199,3 @@ this is an example
 (provide-theme 'org-beautify)
 ;;; org-beautify-theme.el ends here
 #+end_src
-
