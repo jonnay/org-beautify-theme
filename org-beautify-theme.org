@@ -196,6 +196,6 @@ this is an example
 
 * Fin 🐰
 #+begin_src emacs-lisp :tangle yes
-(provide-theme 'org-beautify)
+w(provide-theme 'org-beautify)
 ;;; org-beautify-theme.el ends here
 #+end_src

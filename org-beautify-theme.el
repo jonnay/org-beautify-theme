@@ -75,5 +75,14 @@
                           `(org-headline-done ((t (:strike-through t))))
                           `(org-done ((t (:strike-through t))))))
 
+;;;###autoload
+(when (and (boundp 'custom-theme-load-path) load-file-name)
+  (add-to-list 'custom-theme-load-path
+               (file-name-as-directory (file-name-directory load-file-name))))
+
+;; Local Variables:
+;; no-byte-compile: t
+;; End:
+
 (provide-theme 'org-beautify)
 ;;; org-beautify-theme.el ends here
