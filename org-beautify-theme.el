@@ -2,7 +2,7 @@
 ;; Copyright (C) 2014-2016 Jonathan Arkell
 
 ;; Author: Jonathan Arkell <jonnay@jonnay.net>
-;; Version: 0.2
+;; Version: 0.3
 ;; Created: 5 Oct 2012
 ;; Keywords: org theme
 
@@ -29,15 +29,19 @@
 ;;   and then reload it, and everything will be fine again.
 ;; 
 ;; * Changelog
-;;    - v0.1 :: First Release
-;;          - Make the colors suck a lot less, and the buffers look a lot nicer.
-;;    - v0.1.1 :: [2014-01-06]
-;;      - Fix checkboxes
-;;    - v0.1.2 :: [2014-01-06]
-;;      - Add Verdana font to fall back on
+;;    - v0.3 [2016-10-19]
+;;      - Fix load path issues (Thanks PierreTechoueyres!)
+;;      - reverse chronological changelog, because ah-doy!
 ;;    - v0.2 [2016-08-08]
 ;;      - Better repository Location
 ;;      - Fix so that you can load the theme properly.
+;;    - v0.1.2 :: [2014-01-06]
+;;      - Add Verdana font to fall back on
+;;    - v0.1.1 :: [2014-01-06]
+;;      - Fix checkboxes
+;;    - v0.1 :: First Release
+;;          - Make the colors suck a lot less, and the buffers look a lot nicer.
+;; 
 
 ;;; Code:
 
