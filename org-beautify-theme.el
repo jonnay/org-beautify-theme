@@ -2,7 +2,7 @@
 ;; Copyright (C) 2014-2016 Jonathan Arkell
 
 ;; Author: Jonathan Arkell <jonnay@jonnay.net>
-;; Version: 0.3
+;; Version: 0.3.1
 ;; Created: 5 Oct 2012
 ;; Keywords: org theme
 
@@ -29,7 +29,7 @@
 ;;   and then reload it, and everything will be fine again.
 ;; 
 ;; * Changelog
-;;    - v0.3 [2016-10-19]
+;;    - v0.3.1 [2016-10-19]
 ;;      - Fix load path issues (Thanks PierreTechoueyres!)
 ;;      - reverse chronological changelog, because ah-doy!
 ;;    - v0.2 [2016-08-08]
