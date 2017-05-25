@@ -21,6 +21,10 @@
 
 #+name: commentary
 #+begin_src org-mode :tangle README.org
+#+title: Read Me
+
+[[./screenshot.png]]
+
 ,* Making Org-mode Beautiful
 ,** This theme is dedicated to my wife Shell
   Who—in her beauty, her love, and her love for beauty—has shown me

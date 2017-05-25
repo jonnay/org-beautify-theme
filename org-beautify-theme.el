@@ -10,6 +10,10 @@
 ;; Released under the GPL v3.0
 
 ;;; Commentary:
+;; #+title: Read Me
+;; 
+;; [[./screenshot.png]]
+;; 
 ;; * Making Org-mode Beautiful
 ;; ** This theme is dedicated to my wife Shell
 ;;   Who—in her beauty, her love, and her love for beauty—has shown me
@@ -40,7 +44,7 @@
 ;;    - v0.1.1 :: [2014-01-06]
 ;;      - Fix checkboxes
 ;;    - v0.1 :: First Release
-;;          - Make the colors suck a lot less, and the buffers look a lot nicer.
+;; 	 - Make the colors suck a lot less, and the buffers look a lot nicer.
 ;; 
 
 ;;; Code:
