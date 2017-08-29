@@ -21,6 +21,8 @@
   and then reload it, and everything will be fine again.
 
 * Changelog
+   - v0.3.2 [2017-08-29]
+     - Update License
    - v0.3.1 [2016-10-19]
      - Fix load path issues (Thanks PierreTechoueyres!)
      - reverse chronological changelog, because ah-doy!
