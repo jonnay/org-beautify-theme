@@ -56,12 +56,12 @@
   and then reload it, and everything will be fine again.
 
 ,* Changelog
-   - v0.3.2 [2017-08-29]
+   - v0.3.2 :: [2017-08-29]
      - Update License
-   - v0.3.1 [2016-10-19]
+   - v0.3.1 :: [2016-10-19]
      - Fix load path issues (Thanks PierreTechoueyres!)
      - reverse chronological changelog, because ah-doy!
-   - v0.2 [2016-08-08]
+   - v0.2 :: [2016-08-08]
      - Better repository Location
      - Fix so that you can load the theme properly.
    - v0.1.2 :: [2014-01-06]
