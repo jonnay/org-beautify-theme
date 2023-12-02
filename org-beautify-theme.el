@@ -106,7 +106,7 @@ really bad under some circumstances."
                           `(org-block-begin-line ((t ,org-highlights)))
                           `(org-block-end-line ((t ,org-highlights)))
 
-                          `(org-checkbox ((t (:foreground "#000000", :background "#93a1a1" :box (:line-width -3 :color "#93a1a1" :style "released-button")))))
+                          `(org-checkbox ((t (:foreground "#000000", :background "#93a1a1" :box (:line-width -3 :color "#93a1a1" :style released-button)))))
 
                           `(org-headline-done ((t (:strike-through t))))
                           `(org-done ((t (:strike-through t))))))
