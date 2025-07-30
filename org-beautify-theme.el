@@ -2,7 +2,7 @@
 ;; Copyright (C) 2014-2017 Jonathan Arkell
 
 ;; Author: Jonathan Arkell <jonnay@jonnay.net>
-;; Version: 0.4
+;; Version: 0.5
 ;; Created: 5 Oct 2012
 ;; Keywords: faces org theme
 ;; URL: https://github.com/jonnay/org-beautify-theme
@@ -10,7 +10,6 @@
 
 ;; This file is not part of GNU Emacs.
 ;; Released under the GPL v3.0
-
 ;; This file is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
 ;; the Free Software Foundation; either version 3, or (at your option)
@@ -51,8 +50,11 @@
 ;;   ~org-beautify-theme-use-box-hack~ variable and set it to nil (false).
 ;; 
 ;; * Changelog
+;;    - v0.5 :: [2025-07-30]
+;;      - ACTUALLY fix checkboxes
+;;      - Fix lint errors
 ;;    - v0.4 :: [2017-09-08]
-;;      - Add org-beautify-theme-use-box-hack to allow the user to
+;;      - Add org-beautify-theme-use-box-hack to allow the user to 
 ;;        fix ugly boxes.
 ;;    - v0.3.2 :: [2017-08-29]
 ;;      - Update License
